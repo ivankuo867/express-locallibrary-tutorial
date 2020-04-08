@@ -3,7 +3,7 @@ var express = require('express');
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://ivan:gogoivan@cluster0-vfyyz.mongodb.net/local_library?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI ||'mongodb+srv://ivan:gogoivan@cluster0-vfyyz.mongodb.net/local_library?retryWrites=true&w=majority';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
